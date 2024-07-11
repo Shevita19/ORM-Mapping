@@ -48,6 +48,19 @@ public class CategoryServiceImpl implements CategoryService {
             }
         }
         return categoryRepository.save(category);
-    }}
+    }
+
+    public Product saveProduct(Product product) {
+        if (product.getCategoryList() != null) {
+            for (Category category : product.getCategoryList()) {
+                if (!categoryRepository.existsById(category.getCategoryId())) {
+                    categoryRepository.save(category);
+                }
+            }
+        }
+        return productRepository.save(product);
+    }
+
+}
 
 

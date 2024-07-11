@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Embeddable
-@Table(name = "employee_addresses")  // Optional: You can specify table name if needed
+@Table(name = "address")  // Optional: You can specify table name if needed
 public class Address {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
